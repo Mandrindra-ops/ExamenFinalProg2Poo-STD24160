@@ -4,9 +4,8 @@ package restaurant;
 
 public class Note {
     private final int id;
-    private final int idEtudiant;
+    private final Etudiant etudiant;
     private final Examen examen;
-    private final Note note;
 
 
 
