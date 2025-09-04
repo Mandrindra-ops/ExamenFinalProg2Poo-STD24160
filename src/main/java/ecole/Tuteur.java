@@ -1,4 +1,4 @@
-package ecole;
+package restaurant;
 
 public class Tuteur extends User {
   private final String description;
@@ -28,7 +28,7 @@ public class Tuteur extends User {
     public String getTelephone() {
         return telephone;
     }
-
+    
 
     public String getDescription() {
         return description;

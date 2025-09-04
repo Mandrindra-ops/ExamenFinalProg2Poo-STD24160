@@ -1,4 +1,4 @@
-package ecole;
+package restaurant;
 
 public class User {
     private final int id;

@@ -1,4 +1,4 @@
-package ecole;
+package restaurant;
 
 public class Enseignant extends User {
     private final String specialite;

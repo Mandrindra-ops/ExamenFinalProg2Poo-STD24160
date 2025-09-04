@@ -1,4 +1,4 @@
-package ecole;
+package restaurant;
 
 public class Matiere {
     private final int id;

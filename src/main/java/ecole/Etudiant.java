@@ -1,4 +1,4 @@
-package ecole;
+package restaurant;
 
 public class Etudiant extends User {
    private final String groupe;

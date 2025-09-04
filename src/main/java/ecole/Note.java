@@ -1,4 +1,5 @@
-package ecole;
+package restaurant;
+
 
 
 public class Note {
