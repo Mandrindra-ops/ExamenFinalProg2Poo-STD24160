@@ -1,5 +1,8 @@
 package restaurant;
 
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 
@@ -50,4 +53,24 @@ public class Examen{
             return 0.0;
         }
     }
-}
+
+    public double getMatiereGrade(Matiere matiere, Etudiant etudiant, Instant t) {
+       List<Note> notesFiltrees = new ArrayList<>();
+       for (Note note : this.notes) {
+           if (note.getIdEtudiant().equals(etudiant.getId()) &&
+            note.getMatiere().equals(matiere) &&
+            !note.getDateEtHeure().isAfter(t)) {
+               notesFiltrees.add(note);
+           }
+       }
+       
+       if (notesFiltrees.isEmpty()) {
+           return 0.0;
+       }
+
+       for (Note note : notesFiltrees) {
+           somme += note.getNote() * note.getCoefficients();
+           totalCoefficients += note.getCoefficients();
+       }
+       return somme / totalCoefficients;
+   }
