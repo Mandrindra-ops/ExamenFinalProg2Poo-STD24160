@@ -6,7 +6,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 
-public class Examen{
+public class Examen {
     private final int id;
     private final LocalDateTime dateEtHeure;
     private final Matiere matiere;
@@ -55,22 +55,24 @@ public class Examen{
     }
 
     public double getMatiereGrade(Matiere matiere, Etudiant etudiant, Instant t) {
-       List<Note> notesFiltrees = new ArrayList<>();
-       for (Note note : this.notes) {
-           if (note.getIdEtudiant().equals(etudiant.getId()) &&
-            note.getMatiere().equals(matiere) &&
-            !note.getDateEtHeure().isAfter(t)) {
-               notesFiltrees.add(note);
-           }
-       }
-       
-       if (notesFiltrees.isEmpty()) {
-           return 0.0;
-       }
 
-       for (Note note : notesFiltrees) {
-           somme += note.getNote() * note.getCoefficients();
-           totalCoefficients += note.getCoefficients();
-       }
-       return somme / totalCoefficients;
-   }
+       
+        double notePonderree = 0.0;
+        double totalPointsPonderes = 0.0;
+        double totalCoefficients = 0.0;
+        for (Examen examen : this.examens) {
+            if (examen.getMatiere().equals(matiere)) {
+                notePonderree = examen.getNote() * examen.getCoefficients();
+                totalPointsPonderes += notePonderree ;
+                totalCoefficients += examen.getCoefficients();
+            }
+        }
+        if (totalCoefficients > 0) {
+            return totalPointsPonderes / totalCoefficients;
+        } else {
+            return 0.0;
+        }
+
+        
+    }
+}

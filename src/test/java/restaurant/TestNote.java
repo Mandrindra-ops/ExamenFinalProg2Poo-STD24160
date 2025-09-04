@@ -14,4 +14,9 @@ public class TestNote {
         NotePourEtudiantExamen note = new NotePourEtudiantExamen(1, 1, 1, 15.0);
         assertEquals(15.0, note.getNote(), 0.01, "La note devrait être 15.0");
     }   
+    @Test
+    public void testGetNoteVide() {
+        NotePourEtudiantExamen note = new NotePourEtudiantExamen(1, 1, 1, 0.0);
+        assertEquals(0.0, note.getNote(), 0.01, "La note devrait être 0.0");
+    }   
 }

@@ -3,7 +3,8 @@ package restaurant;
 public class Etudiant extends User {
    private final String groupe;
    private final Tuteur tuteur;
-   private final List<Examen> Examen;
+   private final Note note;
+   private final List<Examen> examens;
 
    public Etudiant(int id, String nom, String prenom, String dateNaissance, String email, String telephone, String groupe, Tuteur tuteur) {
        super(id, nom, prenom, dateNaissance, email, telephone);

@@ -2,17 +2,20 @@ package restaurant;
 
 
 
-public class NotePourEtudiantExamen {
+public class Note {
     private final int id;
     private final int idEtudiant;
-    private final int idExamen;
-    private final double note;
+    private final Examen examen;
+    private final Note note;
 
-    public NotePourEtudiantExamen(int id, int idEtudiant, int idExamen, double note) {
+
+
+    public NotePourEtudiantExamen(int id, int idEtudiant, Examen examen, Note note) {
         this.id = id;
         this.idEtudiant = idEtudiant;
-        this.idExamen = idExamen;
+        this.examen = examen;
         this.note = note;
+        
     }
 
     public int getId() {

@@ -8,5 +8,12 @@ public class User {
     private final String email;
     private final String telephone;
 
-    public
+    public User(int id, String nom, String prenom, String dateNaissance, String email, String telephone) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.email = email;
+        this.telephone = telephone;
+    }
 }
